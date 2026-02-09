@@ -51,3 +51,6 @@ Feel free to submit issues and enhancement requests.
 ## License
 
 MIT
+
+##deployment links-
+https://reactmodel.vercel.app/
