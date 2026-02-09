@@ -30,7 +30,7 @@ const CartModal = ({ closeCart,cart }) => {
                 />
                 <div>
                   <h4 className="font-semibold">{item.title}</h4>
-                  <p className="text-gray-600">₹{item.price}</p>
+                  <p className="text-gray-600">${item.price}</p>
                 </div>
               </div>
             ))
