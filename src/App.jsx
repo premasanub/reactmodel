@@ -6,6 +6,7 @@ import ProductList from "./Components/ProductList";
 
 const App = () => {
  const [products,setProducts]=useState([]);
+ const [cart,setCart]=useState([]);
 
   useEffect(()=>{
   fetchData();
@@ -20,12 +21,20 @@ const App = () => {
       console.error("Error fetching data:",error);
     }
   };
-
+ 
+  const addToCart=(product)=>{
+    const productExists=cart.find((item)=>item.id===product.id);
+    if(productExists){
+      alert("Product already in cart");
+    }else{
+      setCart([...cart,product]);
+    }
+  };
   return (
   
     <>
-   <Navbar/>
-   <ProductList products={products}/>
+   <Navbar  cartCount={cart.length}/>
+   <ProductList products={products} addToCart={addToCart} />
     </>
   );
 };
