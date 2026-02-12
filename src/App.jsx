@@ -8,6 +8,7 @@ const App = () => {
  const [products,setProducts]=useState([]);
  const [cart,setCart]=useState([]);
 const [showCart,setShowCart]=useState(false);
+
   
 useEffect(()=>{
   fetchData();
@@ -31,6 +32,12 @@ useEffect(()=>{
       setCart([...cart,product]);
     }
   };
+
+
+  const removeFromCart = (id)=>{
+    setCart(cart.filter(item=>item.id!==id));
+  };
+
   return (
   
     <>
@@ -39,9 +46,9 @@ useEffect(()=>{
            />  
    <ProductList products={products} addToCart={addToCart} />
    
+   
    {showCart &&(
-    <CartModal
-    cart={cart}
+    <CartModal removeFromCart={removeFromCart} cart={cart} 
     closeCart={()=>setShowCart(false)}                //close Model
     />
    )}

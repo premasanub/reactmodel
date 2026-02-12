@@ -1,6 +1,6 @@
 import   "./CartModal.css";
 
-const CartModal = ({ closeCart,cart }) => {
+const CartModal = ({ closeCart,cart ,removeFromCart}) => {
   return (
     
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
@@ -31,6 +31,11 @@ const CartModal = ({ closeCart,cart }) => {
                 <div>
                   <h4 className="font-semibold">{item.title}</h4>
                   <p className="text-gray-600">${item.price}</p>
+                  
+                     <button onClick={()=>removeFromCart(item.id)} 
+                      className="bg-white-500 text-red px-4 py-2 rounded w-50%"
+                      > ❌</button>
+                    
                 </div>
               </div>
             ))
