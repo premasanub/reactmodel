@@ -43,4 +43,4 @@ src/
 ## License
 MIT
 ## deployment link:
-https://react-seven-plum-83.vercel.app/
+https://reactmodel.vercel.app/
